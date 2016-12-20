@@ -1,0 +1,30 @@
+{
+  "name": "server_side_javascript",
+  "version": "1.0.0",
+  "description": "sever side javascript tutorials",
+  "main": "hello.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.0",
+    "express-mysql-session": "^1.2.0",
+    "express-session": "^1.14.1",
+    "fs": "0.0.1-security",
+    "jade": "^1.11.0",
+    "md5": "^2.2.1",
+    "node-mysql": "^0.4.2",
+    "orientjs": "^2.2.2",
+    "passport": "^0.3.2",
+    "passport-facebook": "^2.1.1",
+    "passport-local": "^1.0.0",
+    "pbkdf2-password": "^1.2.1",
+    "session-file-store": "^0.2.2",
+    "sha256": "^0.2.0",
+    "underscore": "^1.8.3"
+  }
+}

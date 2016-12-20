@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AJAX</title>
+	<style>
+		#btn {
+			border: 1px solid black;
+			padding: 10px;
+			cursor: pointer;
+		}
+	</style>
+</head>
+<body>
+	<div id='output'></div>
+	<!-- <input type='text' id='ktext'>
+	<input type='text' id='dtext'> -->
+	<div id='btn'>Click me</div>
+	<script>
+		(function () {
+			document.getElementById('btn').onclick = showData;
+			function showData() {
+				// var nameKey = document.getElementById('ktext').value;
+				// var myData = document.getElementById('dtext').value;
+				// var myPost = 'nameKey=' + encodeURIComponent(nameKey)  + '&mydata=' + encodeURIComponent(myData);
+				var httpRequest = new XMLHttpRequest();
+				// console.log(myPost);
+				//console.log(httpRequest);
+				httpRequest.onreadystatechange = function() {
+					if(this.readyState === 4 && this.status === 200) {
+						var response = JSON.parse(httpRequest.responseText);
+						console.log(httpRequest);
+						console.log(httpRequest.responseText);
+						document.getElementById('output').innerHTML = response.name + '<br />' + response.data + '<br />' + response.response;
+					} else {
+						console.log('Not ready yet :(');
+					}
+				};
+				// httpRequest.open('POST', 'test.php', true);
+				httpRequest.open('GET', 'https://api.myjson.com/bins/15gyc', true);
+				// httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+				// httpRequest.send(myPost);
+				httpRequest.send();
+			}
+		}) ();
+
+		//console.log(httpRequest.readyState);
+		//0 
+		//1 loading
+		//2 loaded
+		//3 interacting
+		//4 complete
+	</script>
+</body>
+</html>
